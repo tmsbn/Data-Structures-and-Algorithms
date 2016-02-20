@@ -1,3 +1,6 @@
+import algorithms.BubbleSort;
+import algorithms.MergeSort;
+import algorithms.SelectionSort;
 import base.AlgorithmsBase;
 import com.google.common.reflect.ClassPath;
 
@@ -13,7 +16,10 @@ public class Launcher {
 
     public static void main(String args[]) {
 
-        List<Class<? extends AlgorithmsBase>> classes = getClassOfPackage();
+        List<Class<? extends AlgorithmsBase>> classes =new ArrayList<>();
+        classes.add(BubbleSort.class);
+        classes.add(SelectionSort.class);
+        classes.add(MergeSort.class);
 
         String shouldContinue = "";
 
