@@ -19,18 +19,16 @@ public class SelectionSort implements AlgorithmsBase {
 
         int n = numbers.length;
         for (int i = 0; i < n - 1; i++) {
-            int minIndex = numbers[i];
+            int minIndex = i;
 
             for (int j = i + 1; j < n; j++) {
-                if (numbers[i] > numbers[j]) {
+                if (numbers[minIndex] > numbers[j]) {
                     minIndex = j;
                 }
 
             }
             swap(i, minIndex, numbers);
         }
-
-
         System.out.println("The sorted array is " + Arrays.toString(numbers));
     }
 
