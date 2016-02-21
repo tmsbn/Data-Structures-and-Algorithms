@@ -15,12 +15,7 @@ public class Launcher {
 
     public static void main(String args[]) {
 
-        List<Class<? extends AlgorithmsBase>> classes = new ArrayList<>();
-        classes.add(BubbleSort.class);
-        classes.add(SelectionSort.class);
-        classes.add(MergeSort.class);
-        classes.add(InsertionSort.class);
-
+        List<Class<? extends AlgorithmsBase>> classes = getAlgorithmsList();
         String shouldContinue = "";
 
         System.out.println("Algorithms Menu");
@@ -59,6 +54,18 @@ public class Launcher {
             }
 
         }
+    }
+
+    public static List<Class<? extends AlgorithmsBase>> getAlgorithmsList(){
+
+        List<Class<? extends AlgorithmsBase>> classes = new ArrayList<>();
+        classes.add(BubbleSort.class);
+        classes.add(SelectionSort.class);
+        classes.add(MergeSort.class);
+        classes.add(InsertionSort.class);
+
+        return classes;
+
     }
 
 
