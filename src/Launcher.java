@@ -1,4 +1,5 @@
 import algorithms.BubbleSort;
+import algorithms.InsertionSort;
 import algorithms.MergeSort;
 import algorithms.SelectionSort;
 import base.AlgorithmsBase;
@@ -20,6 +21,7 @@ public class Launcher {
         classes.add(BubbleSort.class);
         classes.add(SelectionSort.class);
         classes.add(MergeSort.class);
+        classes.add(InsertionSort.class);
 
         String shouldContinue = "";
 
