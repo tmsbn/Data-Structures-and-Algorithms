@@ -1,7 +1,4 @@
-import algorithms.BubbleSort;
-import algorithms.InsertionSort;
-import algorithms.MergeSort;
-import algorithms.SelectionSort;
+import algorithms.*;
 import base.AlgorithmsBase;
 
 import java.util.ArrayList;
@@ -63,6 +60,7 @@ public class Launcher {
         classes.add(SelectionSort.class);
         classes.add(MergeSort.class);
         classes.add(InsertionSort.class);
+        classes.add(HeapSort.class);
 
         return classes;
 
