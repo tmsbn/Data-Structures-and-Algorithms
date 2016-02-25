@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.sorting;
 
 import base.AlgorithmsBase;
 
@@ -7,7 +7,7 @@ import java.util.Arrays;
 /**
  * Created by tmsbn on 2/21/16.
  */
-public class InsertionSort implements AlgorithmsBase {
+public class InsertionSort extends SortingAlgorithms implements AlgorithmsBase {
     @Override
     public void execute() {
 

@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.sorting;
 
 import base.AlgorithmsBase;
 
@@ -7,7 +7,7 @@ import java.util.Arrays;
 /**
  * Created by tmsbn on 2/19/16.
  */
-public class BubbleSort implements AlgorithmsBase {
+public class BubbleSort extends SortingAlgorithms implements AlgorithmsBase {
 
     @Override
     public void execute() {

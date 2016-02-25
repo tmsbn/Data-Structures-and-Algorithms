@@ -1,4 +1,5 @@
-import algorithms.*;
+import algorithms.arrays.FrequencyOfArrayElements;
+import algorithms.sorting.*;
 import base.AlgorithmsBase;
 
 import java.util.ArrayList;
@@ -15,17 +16,29 @@ public class Launcher {
         List<Class<? extends AlgorithmsBase>> classes = getAlgorithmsList();
         String shouldContinue = "";
 
-        System.out.println("Algorithms Menu");
+
         while (shouldContinue != null) {
+            System.out.println("ALGORITHMS MENU\n****************");
 
             int count = 1;
-            for (Class c : classes)
+            int breakClass = 0;
+
+            Class superClass = null;
+
+            for (Class c : classes) {
+
+                if (superClass == null || !(c.getSuperclass().equals(superClass))) {
+
+                    superClass = c.getSuperclass();
+                    System.out.println("\n"+superClass.getSimpleName()+"\n----------------------");
+                }
                 System.out.println((count++) + ". " + c.getSimpleName());
+            }
 
 
             System.out.print("\nEnter the index of Class:");
             Scanner inputScanner = new Scanner(System.in);
-            int input = inputScanner.nextInt();
+            int input = inputScanner.nextInt() + breakClass;
 
             if (input > 0 && input <= classes.size()) {
                 try {
@@ -53,7 +66,7 @@ public class Launcher {
         }
     }
 
-    public static List<Class<? extends AlgorithmsBase>> getAlgorithmsList(){
+    public static List<Class<? extends AlgorithmsBase>> getAlgorithmsList() {
 
         List<Class<? extends AlgorithmsBase>> classes = new ArrayList<>();
         classes.add(BubbleSort.class);
@@ -61,6 +74,7 @@ public class Launcher {
         classes.add(MergeSort.class);
         classes.add(InsertionSort.class);
         classes.add(HeapSort.class);
+        classes.add(FrequencyOfArrayElements.class);
 
         return classes;
 
