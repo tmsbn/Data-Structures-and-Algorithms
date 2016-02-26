@@ -1,4 +1,4 @@
-package algorithms.arrays;
+package base;
 
 /**
  * Created by tmsbn on 2/25/16.

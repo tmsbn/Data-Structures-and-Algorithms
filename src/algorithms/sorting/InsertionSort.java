@@ -1,6 +1,7 @@
 package algorithms.sorting;
 
 import base.AlgorithmsBase;
+import base.SortingAlgorithms;
 
 import java.util.Arrays;
 

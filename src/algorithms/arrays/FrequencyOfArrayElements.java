@@ -1,6 +1,7 @@
 package algorithms.arrays;
 
 import base.AlgorithmsBase;
+import base.ArrayQuestions;
 
 import java.util.Arrays;
 import java.util.Scanner;

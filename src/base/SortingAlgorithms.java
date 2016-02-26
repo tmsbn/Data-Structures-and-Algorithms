@@ -1,4 +1,4 @@
-package algorithms.sorting;
+package base;
 
 /**
  * Created by tmsbn on 2/25/16.

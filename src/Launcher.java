@@ -1,8 +1,10 @@
 import algorithms.arrays.FrequencyOfArrayElements;
+import algorithms.arrays.PermutationsInString;
 import algorithms.sorting.*;
 import base.AlgorithmsBase;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
@@ -13,7 +15,7 @@ public class Launcher {
 
     public static void main(String args[]) {
 
-        List<Class<? extends AlgorithmsBase>> classes = getAlgorithmsList();
+        List<Class<? extends AlgorithmsBase>> classes = groupAlgorithmsList(getAlgorithmsList());
         String shouldContinue = "";
 
 
@@ -21,7 +23,6 @@ public class Launcher {
             System.out.println("ALGORITHMS MENU\n****************");
 
             int count = 1;
-            int breakClass = 0;
 
             Class superClass = null;
 
@@ -30,7 +31,7 @@ public class Launcher {
                 if (superClass == null || !(c.getSuperclass().equals(superClass))) {
 
                     superClass = c.getSuperclass();
-                    System.out.println("\n"+superClass.getSimpleName()+"\n----------------------");
+                    System.out.println("\n" + superClass.getSimpleName() + "\n----------------------");
                 }
                 System.out.println((count++) + ". " + c.getSimpleName());
             }
@@ -38,7 +39,7 @@ public class Launcher {
 
             System.out.print("\nEnter the index of Class:");
             Scanner inputScanner = new Scanner(System.in);
-            int input = inputScanner.nextInt() + breakClass;
+            int input = inputScanner.nextInt();
 
             if (input > 0 && input <= classes.size()) {
                 try {
@@ -66,17 +67,45 @@ public class Launcher {
         }
     }
 
-    public static List<Class<? extends AlgorithmsBase>> getAlgorithmsList() {
+    private static List<Class<? extends AlgorithmsBase>> getAlgorithmsList() {
 
         List<Class<? extends AlgorithmsBase>> classes = new ArrayList<>();
         classes.add(BubbleSort.class);
+        classes.add(PermutationsInString.class);
         classes.add(SelectionSort.class);
         classes.add(MergeSort.class);
+        classes.add(FrequencyOfArrayElements.class);
         classes.add(InsertionSort.class);
         classes.add(HeapSort.class);
-        classes.add(FrequencyOfArrayElements.class);
+
 
         return classes;
+
+    }
+
+    private static List<Class<? extends AlgorithmsBase>> groupAlgorithmsList(List<Class<? extends AlgorithmsBase>> classes) {
+
+        HashMap<String, List<Class<? extends AlgorithmsBase>>> classMap = new HashMap<>();
+
+        for (Class c : classes) {
+            String superClassName = c.getSuperclass().getName();
+
+            List<Class<? extends AlgorithmsBase>> classArrayList;
+            if ((classArrayList = classMap.get(superClassName)) == null) {
+                classArrayList = new ArrayList<>();
+            }
+
+            classArrayList.add(c);
+            classMap.put(superClassName, classArrayList);
+        }
+
+        List<Class<? extends AlgorithmsBase>> sortedClassList = new ArrayList<>();
+
+        for (String key : classMap.keySet()) {
+            sortedClassList.addAll(classMap.get(key));
+        }
+
+        return sortedClassList;
 
     }
 
