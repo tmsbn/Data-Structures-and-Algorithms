@@ -79,6 +79,7 @@ public class Launcher {
         classes.add(BinarySearch.class);
         classes.add(LeadersInArray.class);
         classes.add(FindAPeakInArray.class);
+        classes.add(FindDuplicates.class);
 
 
         return classes;
