@@ -1,3 +1,4 @@
+import algorithms.arrays.BinarySearch;
 import algorithms.arrays.FrequencyOfArrayElements;
 import algorithms.arrays.PermutationsInString;
 import algorithms.sorting.*;
@@ -33,7 +34,7 @@ public class Launcher {
                     superClass = c.getSuperclass();
                     System.out.println("\n" + superClass.getSimpleName() + "\n----------------------");
                 }
-                System.out.println((count++) + ". " + c.getSimpleName());
+                System.out.println((count++) + ". " + splitCamelCase(c.getSimpleName()));
             }
 
 
@@ -77,7 +78,7 @@ public class Launcher {
         classes.add(FrequencyOfArrayElements.class);
         classes.add(InsertionSort.class);
         classes.add(HeapSort.class);
-
+        classes.add(BinarySearch.class);
 
         return classes;
 
@@ -107,6 +108,17 @@ public class Launcher {
 
         return sortedClassList;
 
+    }
+
+    static String splitCamelCase(String s) {
+        return s.replaceAll(
+                String.format("%s|%s|%s",
+                        "(?<=[A-Z])(?=[A-Z][a-z])",
+                        "(?<=[^A-Z])(?=[A-Z])",
+                        "(?<=[A-Za-z])(?=[^A-Za-z])"
+                ),
+                " "
+        );
     }
 
 
