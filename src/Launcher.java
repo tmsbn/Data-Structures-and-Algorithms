@@ -80,6 +80,7 @@ public class Launcher {
         classes.add(LeadersInArray.class);
         classes.add(FindAPeakInArray.class);
         classes.add(FindDuplicates.class);
+        classes.add(MajorityElement.class);
 
 
         return classes;
