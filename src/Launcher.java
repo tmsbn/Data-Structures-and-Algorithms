@@ -1,6 +1,4 @@
-import algorithms.arrays.BinarySearch;
-import algorithms.arrays.FrequencyOfArrayElements;
-import algorithms.arrays.PermutationsInString;
+import algorithms.arrays.*;
 import algorithms.sorting.*;
 import base.AlgorithmsBase;
 
@@ -79,6 +77,9 @@ public class Launcher {
         classes.add(InsertionSort.class);
         classes.add(HeapSort.class);
         classes.add(BinarySearch.class);
+        classes.add(LeadersInArray.class);
+        classes.add(FindAPeakInArray.class);
+
 
         return classes;
 
