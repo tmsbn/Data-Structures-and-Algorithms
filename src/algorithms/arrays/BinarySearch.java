@@ -31,7 +31,8 @@ public class BinarySearch extends ArrayQuestions implements AlgorithmsBase {
 
         int foundIndex = -1;
 
-        while (start != end) {
+        while (start <= end) {
+
             int middle = (start + end) / 2;
             if (inputNumber == numbers[middle]) {
                 foundIndex = middle;
@@ -39,7 +40,6 @@ public class BinarySearch extends ArrayQuestions implements AlgorithmsBase {
             } else if (inputNumber > numbers[middle]) {
                 start = middle + 1;
             } else {
-                //end is not middle-1, because if we search for a number less than the number[0], then end becomes -1
                 end = middle;
             }
         }
