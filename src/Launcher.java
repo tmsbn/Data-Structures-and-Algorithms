@@ -2,10 +2,7 @@ import algorithms.arrays.*;
 import algorithms.sorting.*;
 import base.AlgorithmsBase;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by tmsbn on 2/19/16.
@@ -14,7 +11,7 @@ public class Launcher {
 
     public static void main(String args[]) {
 
-        List<Class<? extends AlgorithmsBase>> classes = groupAlgorithmsList(getAlgorithmsList());
+        List<Class<? extends AlgorithmsBase>> classes = getAlgorithmsList();
         String shouldContinue = "";
 
 
@@ -68,7 +65,7 @@ public class Launcher {
 
     private static List<Class<? extends AlgorithmsBase>> getAlgorithmsList() {
 
-        List<Class<? extends AlgorithmsBase>> classes = new ArrayList<>();
+        ArrayList<Class<? extends AlgorithmsBase>> classes = new ArrayList<>();
         classes.add(BubbleSort.class);
         classes.add(PermutationsInString.class);
         classes.add(SelectionSort.class);
@@ -82,34 +79,16 @@ public class Launcher {
         classes.add(FindDuplicates.class);
         classes.add(MajorityElement.class);
 
+        Collections.sort(classes, new Comparator<Class<? extends AlgorithmsBase>>() {
+            @Override
+            public int compare(Class<? extends AlgorithmsBase> o1, Class<? extends AlgorithmsBase> o2) {
+
+                return o1.getSuperclass().getSimpleName().compareTo(o2.getSuperclass().getSimpleName());
+            }
+        });
+
 
         return classes;
-
-    }
-
-    private static List<Class<? extends AlgorithmsBase>> groupAlgorithmsList(List<Class<? extends AlgorithmsBase>> classes) {
-
-        HashMap<String, List<Class<? extends AlgorithmsBase>>> classMap = new HashMap<>();
-
-        for (Class c : classes) {
-            String superClassName = c.getSuperclass().getName();
-
-            List<Class<? extends AlgorithmsBase>> classArrayList;
-            if ((classArrayList = classMap.get(superClassName)) == null) {
-                classArrayList = new ArrayList<>();
-            }
-
-            classArrayList.add(c);
-            classMap.put(superClassName, classArrayList);
-        }
-
-        List<Class<? extends AlgorithmsBase>> sortedClassList = new ArrayList<>();
-
-        for (String key : classMap.keySet()) {
-            sortedClassList.addAll(classMap.get(key));
-        }
-
-        return sortedClassList;
 
     }
 
