@@ -78,6 +78,7 @@ public class Launcher {
         classes.add(FindAPeakInArray.class);
         classes.add(FindDuplicates.class);
         classes.add(MajorityElement.class);
+        classes.add(QuickSort.class);
 
         Collections.sort(classes, new Comparator<Class<? extends AlgorithmsBase>>() {
             @Override
