@@ -20,21 +20,24 @@ public class QuickSort extends SortingAlgorithms implements AlgorithmsBase {
 
         System.out.println("The swapped array is " + Arrays.toString(numbers));
 
+
     }
 
-    private int partition(int[] numbers, int lo, int hi) {
 
-        int pivot = numbers[hi];
+    private int partition(int numbers[], int lo, int hi) {
+
         int i = lo;
+        int pivot = numbers[hi];
         for (int j = lo; j < hi; j++) {
             if (numbers[j] <= pivot) {
                 swap(numbers, i, j);
                 i++;
             }
         }
-        swap(numbers, i, hi);
+        swap(numbers, hi, i);
         return i;
     }
+
 
     private void quickSort(int[] numbers, int lo, int hi) {
 

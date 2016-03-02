@@ -29,10 +29,10 @@ public class FindDuplicates extends ArrayQuestions implements AlgorithmsBase {
 
         switch (input) {
             case 2:
-                countArrayMethod(inputArray);
+                negationStrategy(inputArray);
                 break;
             case 1:
-                negationMethod(inputArray);
+                countArrayStrategy(inputArray);
                 break;
             default:
                 break;
@@ -42,7 +42,7 @@ public class FindDuplicates extends ArrayQuestions implements AlgorithmsBase {
 
     }
 
-    private void negationMethod(int[] inputArray) {
+    private void countArrayStrategy(int[] inputArray) {
 
         int length = inputArray.length;
         int[] countArray = new int[length];
@@ -66,7 +66,7 @@ public class FindDuplicates extends ArrayQuestions implements AlgorithmsBase {
         }
     }
 
-    private void countArrayMethod(int[] inputArray) {
+    private void negationStrategy(int[] inputArray) {
 
         int length = inputArray.length;
 

@@ -79,6 +79,8 @@ public class Launcher {
         classes.add(FindDuplicates.class);
         classes.add(MajorityElement.class);
         classes.add(QuickSort.class);
+        classes.add(MaximumAvgSubarray.class);
+        classes.add(NextGreaterElement.class);
 
         Collections.sort(classes, new Comparator<Class<? extends AlgorithmsBase>>() {
             @Override
