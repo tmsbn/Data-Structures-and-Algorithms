@@ -81,6 +81,7 @@ public class Launcher {
         classes.add(QuickSort.class);
         classes.add(MaximumAvgSubarray.class);
         classes.add(NextGreaterElement.class);
+        classes.add(FibonacciNumber.class);
 
         Collections.sort(classes, new Comparator<Class<? extends AlgorithmsBase>>() {
             @Override

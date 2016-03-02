@@ -36,8 +36,6 @@ public class FindDuplicates extends ArrayQuestions implements AlgorithmsBase {
                 break;
             default:
                 break;
-
-
         }
 
     }
