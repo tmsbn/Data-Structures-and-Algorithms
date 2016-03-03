@@ -1,10 +1,11 @@
 package algorithms.arrays;
 
+import algorithms.annotation.Strategy;
+import algorithms.annotation.SwitchMenu;
 import base.AlgorithmsBase;
 import base.ArrayQuestions;
 
 import java.util.Arrays;
-import java.util.Scanner;
 import java.util.Stack;
 
 /**
@@ -12,39 +13,25 @@ import java.util.Stack;
  */
 public class NextGreaterElement extends ArrayQuestions implements AlgorithmsBase {
 
+    int[] inputArray = {24, 23, 54, 12, 20, 7, 27};
+
+
     @Override
     public void execute() {
 
-        int[] inputArray = {24, 23, 54, 12, 20, 7, 27};
-
         System.out.println("The original array is " + Arrays.toString(inputArray));
 
-        System.out.println("\n1 .Naive Algorithm");
-        System.out.println("2. Stack Method");
-        System.out.print("\nChoose Method of Algorithm:");
-
-        int input = new Scanner(System.in).nextInt();
-        switch (input) {
-            case 1:
-                naiveAlgorithm(inputArray);
-                break;
-            case 2:
-                stackMethod(inputArray);
-                break;
-            default:
-                break;
-
-
-        }
+        new SwitchMenu(this).build();
 
     }
 
-    private void stackMethod(int[] numbers) {
+    @Strategy
+    public void stackMethod() {
 
         System.out.println("Next greater element is:");
 
         Stack<Integer> integerStack = new Stack<>();
-        for (int number : numbers) {
+        for (int number : inputArray) {
 
             if (integerStack.isEmpty() || integerStack.peek() > number) {
                 integerStack.push(number);
@@ -57,7 +44,8 @@ public class NextGreaterElement extends ArrayQuestions implements AlgorithmsBase
 
     }
 
-    private void naiveAlgorithm(int[] inputArray) {
+    @Strategy
+    public void naiveAlgorithm() {
 
         System.out.println("Next greater element is:");
         int length = inputArray.length;

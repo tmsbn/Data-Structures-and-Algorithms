@@ -1,5 +1,6 @@
 import algorithms.arrays.*;
 import algorithms.sorting.*;
+import algorithms.utils.StringUtils;
 import base.AlgorithmsBase;
 
 import java.util.*;
@@ -29,7 +30,7 @@ public class Launcher {
                     superClass = c.getSuperclass();
                     System.out.println("\n" + superClass.getSimpleName() + "\n----------------------");
                 }
-                System.out.println((count++) + ". " + splitCamelCase(c.getSimpleName()));
+                System.out.println((count++) + ". " + StringUtils.splitCamelCase(c.getSimpleName()));
             }
 
 
@@ -96,16 +97,7 @@ public class Launcher {
 
     }
 
-    static String splitCamelCase(String s) {
-        return s.replaceAll(
-                String.format("%s|%s|%s",
-                        "(?<=[A-Z])(?=[A-Z][a-z])",
-                        "(?<=[^A-Z])(?=[A-Z])",
-                        "(?<=[A-Za-z])(?=[^A-Za-z])"
-                ),
-                " "
-        );
-    }
+
 
 
 }

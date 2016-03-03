@@ -1,11 +1,12 @@
 package algorithms.arrays;
 
+import algorithms.annotation.SwitchMenu;
+import algorithms.annotation.Strategy;
 import base.AlgorithmsBase;
 import base.ArrayQuestions;
 
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Scanner;
 import java.util.Set;
 
 /**
@@ -13,34 +14,19 @@ import java.util.Set;
  */
 public class FindDuplicates extends ArrayQuestions implements AlgorithmsBase {
 
+    int[] inputArray = {1, 4, 2, 5, 6, 3, 3, 5};
+
     @Override
     public void execute() {
 
-        int[] inputArray = {1, 4, 2, 5, 6, 3, 3, 5};
         System.out.println("Original Array is " + Arrays.toString(inputArray));
 
-        System.out.println("Find duplicates using-");
-        System.out.println("1. Using Count Array");
-        System.out.println("2. Using negation ");
-        System.out.print("\nChoose Method of Algorithm:");
-
-        int input = new Scanner(System.in).nextInt();
-
-
-        switch (input) {
-            case 2:
-                negationStrategy(inputArray);
-                break;
-            case 1:
-                countArrayStrategy(inputArray);
-                break;
-            default:
-                break;
-        }
+        new SwitchMenu(this).setTitle("Find duplicates using").build();
 
     }
 
-    private void countArrayStrategy(int[] inputArray) {
+    @Strategy
+    public void countArrayStrategy() {
 
         int length = inputArray.length;
         int[] countArray = new int[length];
@@ -64,7 +50,8 @@ public class FindDuplicates extends ArrayQuestions implements AlgorithmsBase {
         }
     }
 
-    private void negationStrategy(int[] inputArray) {
+    @Strategy
+    public void negationStrategy() {
 
         int length = inputArray.length;
 
