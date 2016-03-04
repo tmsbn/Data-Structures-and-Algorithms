@@ -2,7 +2,7 @@ package algorithms.arrays;
 
 import algorithms.annotation.Strategy;
 import algorithms.annotation.SwitchMenu;
-import base.AlgorithmsBase;
+import base.DSABase;
 import base.ArrayQuestions;
 
 import java.util.Scanner;
@@ -10,7 +10,7 @@ import java.util.Scanner;
 /**
  * Created by tmsbn on 3/2/16.
  */
-public class FibonacciNumber extends ArrayQuestions implements AlgorithmsBase {
+public class FibonacciNumber extends ArrayQuestions implements DSABase {
 
 
     int input;
@@ -21,7 +21,7 @@ public class FibonacciNumber extends ArrayQuestions implements AlgorithmsBase {
         System.out.print("Find fibonacci number at index:");
         input = new Scanner(System.in).nextInt();
 
-        new SwitchMenu(this).build();
+        new SwitchMenu(this).show();
 
     }
 

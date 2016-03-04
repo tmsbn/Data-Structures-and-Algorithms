@@ -1,6 +1,8 @@
 package algorithms.arrays;
 
-import base.AlgorithmsBase;
+import algorithms.annotation.Strategy;
+import algorithms.annotation.SwitchMenu;
+import base.DSABase;
 import base.ArrayQuestions;
 
 import java.util.Arrays;
@@ -9,42 +11,30 @@ import java.util.Scanner;
 /**
  * Created by tmsbn on 3/1/16.
  */
-public class MaximumAvgSubarray extends ArrayQuestions implements AlgorithmsBase {
+public class MaximumAvgSubArray extends ArrayQuestions implements DSABase {
+
+    int[] inputArray = {4, 100, 99, 23, 3};
+    int sizeOfSubArray;
 
     @Override
     public void execute() {
 
-        int[] inputArray = {4, 100, 99, 23, 3};
+
         System.out.println("Original Array is " + Arrays.toString(inputArray));
 
         System.out.print("Enter size of sub array:");
-        int sizeOfSubArray = new Scanner(System.in).nextInt();
+        sizeOfSubArray = new Scanner(System.in).nextInt();
 
         if (sizeOfSubArray > inputArray.length)
             throw new IllegalArgumentException("Size of sub array cannot be greater than size of array");
 
+        new SwitchMenu(this).show();
 
-        System.out.println("Find duplicates using-");
-        System.out.println("1. Using brute force strategy");
-        System.out.println("2. Using sliding window method ");
-        System.out.print("\nChoose Method of Algorithm:");
 
-        int input = new Scanner(System.in).nextInt();
-
-        switch (input) {
-            case 1:
-                naiveStrategy(inputArray, sizeOfSubArray);
-                break;
-            case 2:
-                slidingWindowStrategy(inputArray, sizeOfSubArray);
-                break;
-            default:
-                break;
-        }
     }
 
-
-    private void naiveStrategy(int[] inputArray, int sizeOfSubArray) {
+    @Strategy
+    public void naiveStrategy() {
 
         int maxSum = 0;
         int startIndex = 0;
@@ -63,7 +53,8 @@ public class MaximumAvgSubarray extends ArrayQuestions implements AlgorithmsBase
             System.out.println(inputArray[i]);
     }
 
-    private void slidingWindowStrategy(int[] inputArray, int sizeOfSubArray) {
+    @Strategy
+    public void slidingWindowStrategy() {
 
         int sum = 0;
         int startIndex = 0;

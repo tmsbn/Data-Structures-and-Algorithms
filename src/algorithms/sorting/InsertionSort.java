@@ -1,6 +1,6 @@
 package algorithms.sorting;
 
-import base.AlgorithmsBase;
+import base.DSABase;
 import base.SortingAlgorithms;
 
 import java.util.Arrays;
@@ -8,7 +8,7 @@ import java.util.Arrays;
 /**
  * Created by tmsbn on 2/21/16.
  */
-public class InsertionSort extends SortingAlgorithms implements AlgorithmsBase {
+public class InsertionSort extends SortingAlgorithms implements DSABase {
     @Override
     public void execute() {
 

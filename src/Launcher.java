@@ -1,7 +1,7 @@
 import algorithms.arrays.*;
 import algorithms.sorting.*;
 import algorithms.utils.StringUtils;
-import base.AlgorithmsBase;
+import base.DSABase;
 
 import java.util.*;
 
@@ -12,12 +12,12 @@ public class Launcher {
 
     public static void main(String args[]) {
 
-        List<Class<? extends AlgorithmsBase>> classes = getAlgorithmsList();
+        List<Class<? extends DSABase>> classes = getQuestionsList();
         String shouldContinue = "";
 
 
         while (shouldContinue != null) {
-            System.out.println("ALGORITHMS MENU\n****************");
+            System.out.print("ALGORITHMS MENU" + StringUtils.lineSeparator);
 
             int count = 1;
 
@@ -28,7 +28,7 @@ public class Launcher {
                 if (superClass == null || !(c.getSuperclass().equals(superClass))) {
 
                     superClass = c.getSuperclass();
-                    System.out.println("\n" + superClass.getSimpleName() + "\n----------------------");
+                    System.out.print("\n" + superClass.getSimpleName() + StringUtils.lineSeparator);
                 }
                 System.out.println((count++) + ". " + StringUtils.splitCamelCase(c.getSimpleName()));
             }
@@ -42,11 +42,11 @@ public class Launcher {
                 try {
 
                     input--;
-                    System.out.println("\nExecuting " + classes.get(input).getSimpleName() + "....\n");
-                    AlgorithmsBase algorithmsBase = classes.get(input).newInstance();
-                    algorithmsBase.execute();
+                    System.out.print("\nExecuting " + classes.get(input).getSimpleName() + StringUtils.lineSeparator);
+                    DSABase DSABase = classes.get(input).newInstance();
+                    DSABase.execute();
 
-                    System.out.println("\nPress enter to continue. Any other key to exit");
+                    System.out.println(StringUtils.lineSeparator + "Press enter to continue. Any other key to exit");
                     Scanner exitScanner = new Scanner(System.in);
                     shouldContinue = exitScanner.nextLine();
                     if (!shouldContinue.equals(""))
@@ -64,9 +64,9 @@ public class Launcher {
         }
     }
 
-    private static List<Class<? extends AlgorithmsBase>> getAlgorithmsList() {
+    private static List<Class<? extends DSABase>> getQuestionsList() {
 
-        ArrayList<Class<? extends AlgorithmsBase>> classes = new ArrayList<>();
+        ArrayList<Class<? extends DSABase>> classes = new ArrayList<>();
         classes.add(BubbleSort.class);
         classes.add(PermutationsInString.class);
         classes.add(SelectionSort.class);
@@ -80,13 +80,14 @@ public class Launcher {
         classes.add(FindDuplicates.class);
         classes.add(MajorityElement.class);
         classes.add(QuickSort.class);
-        classes.add(MaximumAvgSubarray.class);
+        classes.add(MaximumAvgSubArray.class);
         classes.add(NextGreaterElement.class);
         classes.add(FibonacciNumber.class);
+        classes.add(ArrayRotation.class);
 
-        Collections.sort(classes, new Comparator<Class<? extends AlgorithmsBase>>() {
+        Collections.sort(classes, new Comparator<Class<? extends DSABase>>() {
             @Override
-            public int compare(Class<? extends AlgorithmsBase> o1, Class<? extends AlgorithmsBase> o2) {
+            public int compare(Class<? extends DSABase> o1, Class<? extends DSABase> o2) {
 
                 return o1.getSuperclass().getSimpleName().compareTo(o2.getSuperclass().getSimpleName());
             }
@@ -96,8 +97,6 @@ public class Launcher {
         return classes;
 
     }
-
-
 
 
 }

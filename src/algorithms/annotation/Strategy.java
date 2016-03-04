@@ -12,5 +12,5 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Strategy {
-    int[] arrayElements() default {4, 3, 10, 24, 2, 5};
+
 }

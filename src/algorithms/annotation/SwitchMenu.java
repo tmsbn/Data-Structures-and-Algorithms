@@ -21,7 +21,7 @@ public class SwitchMenu {
         this.arrayQuestions = arrayQuestions;
     }
 
-    public void build() {
+    public void show() {
 
 
         Method[] methods = arrayQuestions.getClass().getMethods();
@@ -29,6 +29,7 @@ public class SwitchMenu {
 
         int count = 1;
         ArrayList<Method> annotatedMethods = new ArrayList<>();
+        System.out.print("\nMETHOD MENU"+StringUtils.lineSeparator);
         for (Method method : methods) {
             Annotation[] annotations = method.getDeclaredAnnotations();
             for (Annotation annotation : annotations) {
@@ -36,6 +37,7 @@ public class SwitchMenu {
                     annotatedMethods.add(method);
                     System.out.println(count + ". " + StringUtils.splitCamelCase(method.getName()));
                     count++;
+                    break;
                 }
             }
         }
@@ -43,7 +45,7 @@ public class SwitchMenu {
         System.out.print("\nChoose Method of Algorithm:");
 
         int input = new Scanner(System.in).nextInt();
-        if (input < methods.length) {
+        if (input>0 && input <= annotatedMethods.size()) {
             try {
                 annotatedMethods.get(input - 1).invoke(arrayQuestions);
             } catch (IllegalAccessException | InvocationTargetException e) {

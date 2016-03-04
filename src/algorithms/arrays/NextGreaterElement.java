@@ -2,7 +2,7 @@ package algorithms.arrays;
 
 import algorithms.annotation.Strategy;
 import algorithms.annotation.SwitchMenu;
-import base.AlgorithmsBase;
+import base.DSABase;
 import base.ArrayQuestions;
 
 import java.util.Arrays;
@@ -11,7 +11,7 @@ import java.util.Stack;
 /**
  * Created by tmsbn on 3/1/16.
  */
-public class NextGreaterElement extends ArrayQuestions implements AlgorithmsBase {
+public class NextGreaterElement extends ArrayQuestions implements DSABase {
 
     int[] inputArray = {24, 23, 54, 12, 20, 7, 27};
 
@@ -21,7 +21,7 @@ public class NextGreaterElement extends ArrayQuestions implements AlgorithmsBase
 
         System.out.println("The original array is " + Arrays.toString(inputArray));
 
-        new SwitchMenu(this).build();
+        new SwitchMenu(this).show();
 
     }
 

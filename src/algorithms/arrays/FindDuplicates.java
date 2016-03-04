@@ -2,7 +2,7 @@ package algorithms.arrays;
 
 import algorithms.annotation.SwitchMenu;
 import algorithms.annotation.Strategy;
-import base.AlgorithmsBase;
+import base.DSABase;
 import base.ArrayQuestions;
 
 import java.util.Arrays;
@@ -12,7 +12,7 @@ import java.util.Set;
 /**
  * Created by tmsbn on 2/27/16.
  */
-public class FindDuplicates extends ArrayQuestions implements AlgorithmsBase {
+public class FindDuplicates extends ArrayQuestions implements DSABase {
 
     int[] inputArray = {1, 4, 2, 5, 6, 3, 3, 5};
 
@@ -21,7 +21,7 @@ public class FindDuplicates extends ArrayQuestions implements AlgorithmsBase {
 
         System.out.println("Original Array is " + Arrays.toString(inputArray));
 
-        new SwitchMenu(this).setTitle("Find duplicates using").build();
+        new SwitchMenu(this).setTitle("Find duplicates using").show();
 
     }
 

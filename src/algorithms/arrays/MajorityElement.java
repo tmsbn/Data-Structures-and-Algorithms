@@ -1,6 +1,6 @@
 package algorithms.arrays;
 
-import base.AlgorithmsBase;
+import base.DSABase;
 import base.ArrayQuestions;
 
 import java.util.Arrays;
@@ -8,7 +8,7 @@ import java.util.Arrays;
 /**
  * Created by tmsbn on 2/27/16.
  */
-public class MajorityElement extends ArrayQuestions implements AlgorithmsBase {
+public class MajorityElement extends ArrayQuestions implements DSABase {
 
     @Override
     public void execute() {

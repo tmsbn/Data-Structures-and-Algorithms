@@ -1,6 +1,6 @@
 package algorithms.arrays;
 
-import base.AlgorithmsBase;
+import base.DSABase;
 import base.ArrayQuestions;
 
 import java.util.Arrays;
@@ -9,7 +9,7 @@ import java.util.Scanner;
 /**
  * Created by tmsbn on 2/27/16.
  */
-public class BinarySearch extends ArrayQuestions implements AlgorithmsBase {
+public class BinarySearch extends ArrayQuestions implements DSABase {
 
     @Override
     public void execute() {

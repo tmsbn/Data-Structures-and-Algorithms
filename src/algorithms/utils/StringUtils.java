@@ -1,9 +1,13 @@
 package algorithms.utils;
 
+import java.util.Scanner;
+
 /**
  * Created by tmsbn on 3/3/16.
  */
 public class StringUtils {
+
+    public static final String lineSeparator = "\n----------------------------\n";
 
     public static String splitCamelCase(String s) {
         s = Character.toUpperCase(s.charAt(0)) + s.substring(1);
@@ -16,4 +20,13 @@ public class StringUtils {
                 " "
         );
     }
+
+    public static int getInputFromUser(String question) {
+
+        System.out.print(question + ":");
+        return new Scanner(System.in).nextInt();
+
+    }
+
+
 }

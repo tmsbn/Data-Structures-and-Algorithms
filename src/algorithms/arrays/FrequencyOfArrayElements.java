@@ -1,56 +1,39 @@
 package algorithms.arrays;
 
-import base.AlgorithmsBase;
+import algorithms.annotation.Strategy;
+import algorithms.annotation.SwitchMenu;
+import base.DSABase;
 import base.ArrayQuestions;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 /**
  * Created by tmsbn on 2/25/16.
  */
-public class FrequencyOfArrayElements extends ArrayQuestions implements AlgorithmsBase {
+public class FrequencyOfArrayElements extends ArrayQuestions implements DSABase {
+
+    int numbers[] = {4, 5, 1, 3, 5, 0, 3};
 
     @Override
     public void execute() {
 
-        int numbers[] = {4, 5, 1, 3, 5, 0, 3};
 
         System.out.println("The original array is " + Arrays.toString(numbers));
 
-        System.out.println("1. Direct Algorithm:");
-        System.out.println("2. Frequency Algorithm");
-        System.out.println("3. Optimized Frequency Algorithm");
-        System.out.print("\nChoose Method of Algorithm:");
-
-        int input = new Scanner(System.in).nextInt();
-        switch (input) {
-            case 1:
-                n00bAlgorithm(numbers);
-                break;
-            case 2:
-                frequencyAlgorithm(numbers);
-                break;
-            case 3:
-                frequencyAlgorithmWithSameArray(numbers);
-                break;
-            default:
-                break;
-
-
-        }
+        new SwitchMenu(this).show();
 
     }
 
     // Algorithm 1: O(n^2) time and O(1) space
-    private void n00bAlgorithm(int[] inputArray) {
+    @Strategy
+    public void naiveAlgorithm() {
 
-        int length = inputArray.length;
+        int length = numbers.length;
 
         for (int i = 0; i < length; i++) {
 
             int count = 0;
-            for (int number : inputArray) {
+            for (int number : numbers) {
                 if (number == i)
                     count++;
             }
@@ -60,12 +43,13 @@ public class FrequencyOfArrayElements extends ArrayQuestions implements Algorith
     }
 
     // Algorithm 2: O(n) time and O(n) space, BUT the array elements HAS be less than size of the array
-    private void frequencyAlgorithm(int[] inputArray) {
+    @Strategy
+    public void frequencyAlgorithm() {
 
-        int length = inputArray.length;
+        int length = numbers.length;
         int[] countArray = new int[length];
 
-        for (int number : inputArray) {
+        for (int number : numbers) {
             //To prevent index out of bound exception
             if (number < length)
                 countArray[number]++;
@@ -77,15 +61,16 @@ public class FrequencyOfArrayElements extends ArrayQuestions implements Algorith
     }
 
     // Algorithm 3: O(n) time and O(1) space, BUT the array elements HAS be less than size of the array
-    private void frequencyAlgorithmWithSameArray(int[] inputArray) {
+    @Strategy
+    public void frequencyAlgorithmWithSameArray() {
 
-        int length = inputArray.length;
+        int length = numbers.length;
         for (int i = 0; i < length; i++) {
-            inputArray[inputArray[i] % length] += length;
+            numbers[numbers[i] % length] += length;
         }
 
         for (int i = 0; i < length; i++) {
-            System.out.println(i + ". " + inputArray[i] / length);
+            System.out.println(i + ". " + numbers[i] / length);
         }
     }
 

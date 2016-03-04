@@ -1,6 +1,6 @@
 package algorithms.arrays;
 
-import base.AlgorithmsBase;
+import base.DSABase;
 import base.ArrayQuestions;
 
 import java.util.Scanner;
@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * Created by tmsbn on 2/25/16.
  */
-public class PermutationsInString extends ArrayQuestions implements AlgorithmsBase {
+public class PermutationsInString extends ArrayQuestions implements DSABase {
 
     @Override
     public void execute() {

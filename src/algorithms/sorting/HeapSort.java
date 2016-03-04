@@ -1,6 +1,6 @@
 package algorithms.sorting;
 
-import base.AlgorithmsBase;
+import base.DSABase;
 import base.SortingAlgorithms;
 
 import java.util.Arrays;
@@ -8,7 +8,7 @@ import java.util.Arrays;
 /**
  * Created by tmsbn on 2/22/16.
  */
-public class HeapSort extends SortingAlgorithms implements AlgorithmsBase {
+public class HeapSort extends SortingAlgorithms implements DSABase {
 
     @Override
     public void execute() {
