@@ -16,13 +16,13 @@ public class FirstNonRepeatingCharacter extends ArrayQuestions implements DSABas
     @Override
     public void execute() {
 
-        input = StringUtils.getStringFromUser("Please enter the input string");
+        input = StringUtils.getStringFromUser("Please enter a sample string");
 
         new SwitchMenu(this).show();
 
     }
 
-    //Time complexity O(n*n), space complexity O(n)
+    //Time complexity O(n*n), space complexity O(1)
     @Strategy
     public void naiveStrategy() {
 
@@ -43,6 +43,28 @@ public class FirstNonRepeatingCharacter extends ArrayQuestions implements DSABas
             }
 
         }
+        System.out.println("There are no non repeating characters in the string");
+    }
+
+    //Time complexity O(n), space complexity O(256)
+    @Strategy
+    public void usingCountStrategy() {
+
+        int length = input.length();
+        int[] countArray = new int[256];
+
+
+        for (int i = 0; i < length; i++) {
+            countArray[input.charAt(i)]++;
+        }
+
+        for (int i = 0; i < 256; i++) {
+            if (countArray[i] == 1) {
+                System.out.println("First non repeating character is " + (char) i);
+                return;
+            }
+        }
+
         System.out.println("There are no non repeating characters in the string");
     }
 }
