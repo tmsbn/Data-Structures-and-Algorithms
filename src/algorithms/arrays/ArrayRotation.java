@@ -22,7 +22,7 @@ public class ArrayRotation extends ArrayQuestions implements DSABase {
     public void execute() {
 
         System.out.println("Original Array is " + Arrays.toString(inputArray));
-        shiftBy = StringUtils.getInputFromUser("Enter the number of rotations to perform");
+        shiftBy = StringUtils.getIntFromUser("Enter the number of rotations to perform");
 
         new SwitchMenu(this).show();
 
