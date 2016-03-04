@@ -54,4 +54,29 @@ public class ArrayRotation extends ArrayQuestions implements DSABase {
         }
         System.out.println("Rotated Array is " + Arrays.toString(rotatedArray));
     }
+
+    //Space Complexity:O(1) & Time complexity:O(n)
+    @Strategy
+    public void usingArrayReversal() {
+
+        reverse(inputArray, 0, shiftBy - 1);
+        reverse(inputArray, shiftBy, inputArray.length - 1);
+
+        //time complexity is calculated without counting the reverse step// I think
+        reverse(inputArray, 0, inputArray.length - 1);
+
+        System.out.println("Rotated Array is " + Arrays.toString(inputArray));
+
+    }
+
+    private void reverse(int array[], int start, int end) {
+
+        int temp;
+        for (int i = start, j = end; i < j; i++, j--) {
+            temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+    }
+
 }
