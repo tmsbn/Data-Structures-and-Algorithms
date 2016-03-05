@@ -18,6 +18,12 @@ public class AlternateSignElements extends ArrayQuestions implements DSABase {
         System.out.println("Original Array is " + Arrays.toString(inputArray));
 
         int length = inputArray.length;
+
+        //The basic strategy is
+        //1. iterate through the array
+        //2. Check if an element has the wrong sign
+        //3. Find the next occurrence of the element with the right sign
+        //4. Do a right rotation, which will bring the found element to start, while preserving the array order
         for (int i = 0; i < length; i++) {
 
             if ((i % 2 == 0 && inputArray[i] < 0) || (i % 2 == 1 && inputArray[i] > 0)) {
