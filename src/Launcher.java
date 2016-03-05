@@ -85,6 +85,7 @@ public class Launcher {
         classes.add(FibonacciNumber.class);
         classes.add(ArrayRotation.class);
         classes.add(FirstNonRepeatingCharacter.class);
+        classes.add(AlternateSignElements.class);
 
         Collections.sort(classes, new Comparator<Class<? extends DSABase>>() {
             @Override

@@ -26,7 +26,7 @@ public class NextGreaterElement extends ArrayQuestions implements DSABase {
     }
 
     @Strategy
-    public void stackMethod() {
+    public void stackStrategy() {
 
         System.out.println("Next greater element is:");
 
@@ -45,7 +45,7 @@ public class NextGreaterElement extends ArrayQuestions implements DSABase {
     }
 
     @Strategy
-    public void naiveAlgorithm() {
+    public void naiveStrategy() {
 
         System.out.println("Next greater element is:");
         int length = inputArray.length;

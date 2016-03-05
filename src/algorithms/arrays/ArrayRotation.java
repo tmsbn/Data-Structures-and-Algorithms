@@ -30,7 +30,7 @@ public class ArrayRotation extends ArrayQuestions implements DSABase {
 
     //Space Complexity:O(1) & Time complexity:O(n*shiftBy)
     @Strategy
-    public void naiveAlgorithm() {
+    public void naiveStrategy() {
 
         int length = inputArray.length;
         for (int i = 0; i < shiftBy; i++) {
@@ -45,7 +45,7 @@ public class ArrayRotation extends ArrayQuestions implements DSABase {
 
     //Space Complexity:O(n) & Time complexity:O(n)
     @Strategy
-    public void usingDuplicateArray() {
+    public void duplicateArray() {
 
         int length = inputArray.length;
         int[] rotatedArray = new int[length];
@@ -57,7 +57,7 @@ public class ArrayRotation extends ArrayQuestions implements DSABase {
 
     //Space Complexity:O(1) & Time complexity:O(n)
     @Strategy
-    public void usingArrayReversal() {
+    public void arrayReversal() {
 
         reverse(inputArray, 0, shiftBy - 1);
         reverse(inputArray, shiftBy, inputArray.length - 1);

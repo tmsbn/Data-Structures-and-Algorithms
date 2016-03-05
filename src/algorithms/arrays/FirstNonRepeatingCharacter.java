@@ -48,7 +48,7 @@ public class FirstNonRepeatingCharacter extends ArrayQuestions implements DSABas
 
     //Time complexity O(n), space complexity O(256)
     @Strategy
-    public void usingCountStrategy() {
+    public void countStrategy() {
 
         int length = input.length();
         int[] countArray = new int[256];
