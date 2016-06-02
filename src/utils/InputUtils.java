@@ -19,7 +19,7 @@ public class InputUtils {
     public static String getStringFromUser(String question) {
 
         System.out.print(question + ":");
-        return new Scanner(System.in).next();
+        return new Scanner(System.in).nextLine();
     }
 
     public static Set<String> getWordsFromUser(String question){
