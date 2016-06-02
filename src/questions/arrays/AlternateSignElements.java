@@ -1,4 +1,4 @@
-package algorithms.arrays;
+package questions.arrays;
 
 import base.ArrayQuestions;
 import base.DSABase;

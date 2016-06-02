@@ -1,11 +1,10 @@
-package algorithms.arrays;
+package questions.arrays;
 
-import algorithms.annotation.Strategy;
-import algorithms.annotation.SwitchMenu;
+import annotation.Strategy;
+import annotation.SwitchMenu;
+import utils.InputUtils;
 import base.DSABase;
 import base.ArrayQuestions;
-
-import java.util.Scanner;
 
 /**
  * Created by tmsbn on 3/2/16.
@@ -18,8 +17,7 @@ public class FibonacciNumber extends ArrayQuestions implements DSABase {
     @Override
     public void execute() {
 
-        System.out.print("Find fibonacci number at index:");
-        input = new Scanner(System.in).nextInt();
+        input = InputUtils.getIntFromUser("Find fibonacci number at index:");
 
         new SwitchMenu(this).show();
 

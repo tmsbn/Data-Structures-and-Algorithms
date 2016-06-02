@@ -1,4 +1,4 @@
-package algorithms.arrays;
+package questions.arrays;
 
 import base.DSABase;
 import base.ArrayQuestions;
@@ -20,6 +20,7 @@ public class PermutationsInString extends ArrayQuestions implements DSABase {
         permute(new StringBuilder(string), 0, string.length() - 1);
     }
 
+
     private void permute(StringBuilder stringBuilder, int start, int end) {
 
         if (start == end) {
@@ -36,7 +37,7 @@ public class PermutationsInString extends ArrayQuestions implements DSABase {
         }
     }
 
-    public void swap(int i, int j, StringBuilder stringBuilder) {
+    private void swap(int i, int j, StringBuilder stringBuilder) {
 
         char temp=stringBuilder.charAt(i);
         stringBuilder.setCharAt(i,temp);

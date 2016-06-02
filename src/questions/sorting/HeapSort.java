@@ -1,4 +1,4 @@
-package algorithms.sorting;
+package questions.sorting;
 
 import base.DSABase;
 import base.SortingAlgorithms;

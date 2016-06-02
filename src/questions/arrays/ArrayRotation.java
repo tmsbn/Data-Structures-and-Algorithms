@@ -1,8 +1,8 @@
-package algorithms.arrays;
+package questions.arrays;
 
-import algorithms.annotation.Strategy;
-import algorithms.annotation.SwitchMenu;
-import algorithms.utils.StringUtils;
+import annotation.Strategy;
+import annotation.SwitchMenu;
+import utils.InputUtils;
 import base.ArrayQuestions;
 import base.DSABase;
 
@@ -22,7 +22,7 @@ public class ArrayRotation extends ArrayQuestions implements DSABase {
     public void execute() {
 
         System.out.println("Original Array is " + Arrays.toString(inputArray));
-        shiftBy = StringUtils.getIntFromUser("Enter the number of rotations to perform");
+        shiftBy = InputUtils.getIntFromUser("Enter the number of rotations to perform");
 
         new SwitchMenu(this).show();
 

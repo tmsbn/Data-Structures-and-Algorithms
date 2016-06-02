@@ -1,7 +1,7 @@
-package algorithms.arrays;
+package questions.arrays;
 
-import algorithms.annotation.Strategy;
-import algorithms.annotation.SwitchMenu;
+import annotation.Strategy;
+import annotation.SwitchMenu;
 import base.DSABase;
 import base.ArrayQuestions;
 
@@ -24,6 +24,7 @@ public class NextGreaterElement extends ArrayQuestions implements DSABase {
         new SwitchMenu(this).show();
 
     }
+
 
     @Strategy
     public void stackStrategy() {

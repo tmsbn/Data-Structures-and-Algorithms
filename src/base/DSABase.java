@@ -6,4 +6,5 @@ package base;
 public interface DSABase {
 
     void execute();
+
 }

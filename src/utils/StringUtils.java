@@ -1,6 +1,4 @@
-package algorithms.utils;
-
-import java.util.Scanner;
+package utils;
 
 /**
  * Created by tmsbn on 3/3/16.
@@ -22,18 +20,7 @@ public class StringUtils {
         );
     }
 
-    public static int getIntFromUser(String question) {
 
-        System.out.print(question + ":");
-        return new Scanner(System.in).nextInt();
-
-    }
-
-    public static String getStringFromUser(String question) {
-
-        System.out.print(question + ":");
-        return new Scanner(System.in).next();
-    }
 
 
 }

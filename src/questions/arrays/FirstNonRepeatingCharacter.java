@@ -1,8 +1,8 @@
-package algorithms.arrays;
+package questions.arrays;
 
-import algorithms.annotation.Strategy;
-import algorithms.annotation.SwitchMenu;
-import algorithms.utils.StringUtils;
+import annotation.Strategy;
+import annotation.SwitchMenu;
+import utils.InputUtils;
 import base.ArrayQuestions;
 import base.DSABase;
 
@@ -16,7 +16,7 @@ public class FirstNonRepeatingCharacter extends ArrayQuestions implements DSABas
     @Override
     public void execute() {
 
-        input = StringUtils.getStringFromUser("Please enter a sample string");
+        input = InputUtils.getStringFromUser("Please enter a sample string");
 
         new SwitchMenu(this).show();
 

@@ -1,6 +1,7 @@
-import algorithms.arrays.*;
-import algorithms.sorting.*;
-import algorithms.utils.StringUtils;
+import questions.arrays.*;
+import questions.sorting.*;
+import questions.strings.WordBreak;
+import utils.StringUtils;
 import base.DSABase;
 
 import java.util.*;
@@ -86,11 +87,14 @@ public class Launcher {
         classes.add(ArrayRotation.class);
         classes.add(FirstNonRepeatingCharacter.class);
         classes.add(AlternateSignElements.class);
+        classes.add(CoinChange.class);
+        classes.add(NonRepeatingLongestSubstring.class);
+        classes.add(IncreasingSequence.class);
+        classes.add(WordBreak.class);
 
         Collections.sort(classes, new Comparator<Class<? extends DSABase>>() {
             @Override
             public int compare(Class<? extends DSABase> o1, Class<? extends DSABase> o2) {
-
                 return o1.getSuperclass().getSimpleName().compareTo(o2.getSuperclass().getSimpleName());
             }
         });

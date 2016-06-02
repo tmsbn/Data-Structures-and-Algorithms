@@ -1,7 +1,7 @@
-package algorithms.arrays;
+package questions.arrays;
 
-import algorithms.annotation.SwitchMenu;
-import algorithms.annotation.Strategy;
+import annotation.SwitchMenu;
+import annotation.Strategy;
 import base.DSABase;
 import base.ArrayQuestions;
 

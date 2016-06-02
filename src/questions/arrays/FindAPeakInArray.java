@@ -1,4 +1,4 @@
-package algorithms.arrays;
+package questions.arrays;
 
 import base.DSABase;
 import base.ArrayQuestions;
@@ -19,7 +19,6 @@ public class FindAPeakInArray extends ArrayQuestions implements DSABase {
 
         int peak = findPeak(inputArray);
         System.out.println(peak != -1 ? "Peak found at index:" + peak : "Peak doesn't exist");
-
 
     }
 
