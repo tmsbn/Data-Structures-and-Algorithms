@@ -1,4 +1,5 @@
 import questions.arrays.*;
+import questions.numbers.NextGreaterNumber2;
 import questions.sorting.*;
 import questions.strings.ReverseWords;
 import questions.strings.WordBreak;
@@ -93,6 +94,8 @@ public class Launcher {
         classes.add(IncreasingSequence.class);
         classes.add(WordBreak.class);
         classes.add(ReverseWords.class);
+        classes.add(NextGreaterNumber2.class);
+
 
         Collections.sort(classes, new Comparator<Class<? extends DSABase>>() {
             @Override
