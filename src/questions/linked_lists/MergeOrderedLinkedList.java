@@ -2,7 +2,7 @@ package questions.linked_lists;
 
 import base.DSABase;
 import base.ListQuestions;
-import utils.StringUtils;
+import data_structures.LinkedList;
 
 /**
  * Created by tmsbn on 6/11/16.
@@ -14,71 +14,23 @@ public class MergeOrderedLinkedList extends ListQuestions implements DSABase {
 
         LinkedList linkedList1 = new LinkedList();
         linkedList1.insert(0);
-        linkedList1.insert(1);
-        linkedList1.insert(2);
+        linkedList1.insert(5);
+        linkedList1.insert(7);
+        linkedList1.insert(10);
+        linkedList1.insert(13);
+        linkedList1.insert(15);
 
         LinkedList linkedList2 = new LinkedList();
-        linkedList2.insert(10);
-        linkedList2.insert(11);
-        linkedList2.insert(12);
+        linkedList2.insert(2);
+        linkedList2.insert(3);
+        linkedList2.insert(8);
 
         linkedList1.printList();
         linkedList2.printList();
 
-    }
+        LinkedList mergedList = linkedList1.merge(linkedList2);
+        mergedList.printList();
 
-
-    private class LinkedList {
-
-        Node head, tail;
-
-        void insert(int number) {
-
-            Node node = new Node(number);
-
-            if (head == null) {
-                head = node;
-                tail = node;
-            } else {
-                tail.next = node;
-                tail = node;
-            }
-
-        }
-
-        void merge(LinkedList linkedList) {
-
-        }
-
-        void printList() {
-
-            System.out.print(StringUtils.lineSeparator);
-            Node temp = head;
-
-            boolean separator = false;
-            while (temp != null) {
-
-                if (separator) {
-                    System.out.print(">");
-                }
-
-                System.out.print(temp.number);
-
-                temp = temp.next;
-                separator = true;
-            }
-        }
-
-        private class Node {
-
-            Node(int number) {
-                this.number = number;
-            }
-
-            private int number;
-            private Node next;
-
-        }
     }
 
 

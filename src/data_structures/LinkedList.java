@@ -5,7 +5,7 @@ import utils.StringUtils;
 public class LinkedList {
 
     private Node head, tail;
-    boolean isLoop = false;
+    private boolean isLoop = false;
 
     public void insert(int number) {
 
@@ -31,6 +31,10 @@ public class LinkedList {
             tail.next = node;
             tail = node;
         }
+    }
+
+    public boolean isLoop() {
+        return isLoop;
     }
 
     public void makeLoop(int index) {

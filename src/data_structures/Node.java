@@ -2,15 +2,17 @@ package data_structures;
 
 public class Node {
 
-    Node(int number) {
+    public int number;
+    public Node next;
+    public Node previous;
+
+
+    public Node(int number) {
         this.number = number;
     }
 
-    public Node(Node next) {
-        this.next = next;
-    }
 
-    public int number;
-    public Node next;
+
+
 
 }

@@ -51,6 +51,9 @@ public class SwitchMenu {
         System.out.print("\nChoose Method of Algorithm:");
 
         int input = new Scanner(System.in).nextInt();
+
+        System.out.print("\nAnswer" + StringUtils.lineSeparator);
+
         if (input > 0 && input <= annotatedMethods.size()) {
             try {
                 annotatedMethods.get(input - 1).invoke(dsaBase);
