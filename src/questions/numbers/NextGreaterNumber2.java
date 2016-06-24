@@ -24,7 +24,6 @@ public class NextGreaterNumber2 extends NumberQuestions implements DSABase {
             numberAsArray[i] = Character.getNumericValue(numberAsString.charAt(i));
         }
 
-        //System.out.println(Arrays.toString(numberAsArray));
 
         int index = 0;
 
