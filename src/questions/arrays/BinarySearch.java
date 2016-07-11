@@ -14,7 +14,7 @@ public class BinarySearch extends ArrayQuestions implements DSABase {
     @Override
     public void execute() {
 
-        //The array must be sorted for binary search to work
+        //The array must be sorted for binary doesNumberExist to work
         int[] sortedArray = {1, 2, 4, 5, 6};
 
         System.out.println("Original Array is " + Arrays.toString(sortedArray));

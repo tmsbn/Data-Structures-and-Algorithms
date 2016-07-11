@@ -1,5 +1,6 @@
 import base.DSABase;
 import questions.arrays.*;
+import questions.graph_questions.GraphTest;
 import questions.linked_lists.*;
 import questions.numbers.NextGreaterNumber;
 import questions.numbers.ReverseNumber;
@@ -72,9 +73,7 @@ public class Launcher {
                 }
             }
 
-
             // int previousInput = FileUtils.read("data.txt");
-
 
             if (input > 0 && input <= classes.size()) {
                 try {
@@ -143,6 +142,12 @@ public class Launcher {
         classes.add(MinimumCostPathMatrix.class);
         classes.add(ReverseNumber.class);
         classes.add(NextGreaterNumber.class);
+        classes.add(MaxConsequective1swithGap.class);
+        classes.add(BinarySearchTreeTest.class);
+        classes.add(ShortestPalindrome.class);
+        classes.add(PatternMatching.class);
+        classes.add(KnapsackProblem.class);
+        classes.add(GraphTest.class);
 
         Collections.sort(classes, new Comparator<Class<? extends DSABase>>() {
             @Override

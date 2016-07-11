@@ -2,7 +2,7 @@ package questions.linked_lists;
 
 import base.DSABase;
 import base.ListQuestions;
-import data_structures.Tree;
+import data_structures.BinaryTree;
 import data_structures.TreeNode;
 
 /**
@@ -13,10 +13,10 @@ public class TreeToDoubleList extends ListQuestions implements DSABase {
     @Override
     public void execute() {
 
-        Tree tree = new Tree(Tree.TREES.SAMPLE2);
-        tree.convertToDoublyLinkedList();
+        BinaryTree binaryTree = new BinaryTree(BinaryTree.SAMPLE_TREE.SAMPLE2);
+        binaryTree.convertToDoublyLinkedList();
 
-        TreeNode temp = tree.getRoot();
+        TreeNode temp = binaryTree.getRoot();
         while (temp != null) {
             System.out.print(temp.number + " ");
             temp = temp.right;
